@@ -83,6 +83,23 @@ nav {
     margin-bottom: 20px;
 }
 
+#search-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #042435;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#search-btn:hover {
+    background-color: #e6b800;
+}
+
 /* Search and Filters */
 .filters {
     display: flex;
@@ -109,6 +126,9 @@ nav {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
+
+/* Testimonials Section */
+
 
 /* Footer */
 footer {
