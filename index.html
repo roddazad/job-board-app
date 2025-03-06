@@ -7,7 +7,60 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    
+      <!-- Navigation Bar -->
+      <nav>
+        <div class="logo"><a class="logo-link" href="#">Job Board</a></div>
+        <ul class="nav-links">
+           
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+     <!-- Hero Section -->
+     <header class="hero">
+        <div class="hero-content">
+            <h1>Find Your Dream Job</h1>
+            <img class="hero-image" src="https://media.licdn.com/dms/image/v2/C4D12AQFEYYG6IE4YoQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1531254387519?e=2147483647&v=beta&t=DenKXZAgRYtFFVh2-sN8-nGxm2jYe_1cg12dRvBOurQ" alt="Hero Image">
+        </div>
+        <input class="input-container" type="text" placeholder="Search for jobs...">
+        <div class="filters">
+            <select>
+                <option>Location</option>
+            </select>
+            <select>
+                <option>Category</option>
+            </select>
+            <select>
+                <option>Salary Range</option>
+            </select>
+        </div>
+    </header>
+
+     <!-- Job Listings Section -->
+     <section class="job-listings">
+        <h2>Latest Jobs</h2>
+        <div class="jobs-container">
+            <!-- Job cards will be dynamically inserted here -->
+        </div>
+    </section>
+
+     <!-- Footer -->
+     <footer>
+        <div class="footer-content">
+            <p class="slogan">"Connecting Talent with Opportunity"</p>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </div>
+        <p>&copy; 2025 JobBoard. All Rights Reserved.</p>
+    </footer>
+    <!-- JavaScript link -->
     <script src="./script.js"></script>
 </body>
 </html>
