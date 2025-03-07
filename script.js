@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("✅ JavaScript Loaded!");
+    console.log(" JavaScript Loaded!");
 
     const currentPage = window.location.pathname.split("/").pop();
-    console.log("📄 Current Page:", currentPage);
+    console.log(" Current Page:", currentPage);
 
-    // 🔹 Toggle Mobile Navigation
+    //  Toggle Mobile Navigation
     const menuToggle = document.getElementById("menu-toggle");
     const navLinks = document.querySelector(".nav-links");
 
@@ -14,14 +14,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 🔹 Search Functionality (index.html & search.html)
+    //  Search Functionality (index.html & search.html)
     if (currentPage === "index.html" || currentPage === "") {
         const searchBtn = document.getElementById("search-btn");
 
         if (searchBtn) {
             searchBtn.addEventListener("click", function (event) {
                 event.preventDefault();
-                console.log("✅ Search button clicked!");
+                console.log(" Search button clicked!");
 
                 // Collect search form values
                 const getInputValue = (id) => {
@@ -43,24 +43,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 };
 
                 if (!searchParams.search) {
-                    console.warn("❗ No Job Title Entered!");
+                    console.warn(" No Job Title Entered!");
                     return;
                 }
 
                 // Redirect with query parameters
                 const queryParams = new URLSearchParams(searchParams).toString();
                 const redirectURL = `search.html?${queryParams}`;
-                console.log("🔗 Redirecting to:", redirectURL);
+                console.log(" Redirecting to:", redirectURL);
                 window.location.href = redirectURL;
             });
 
-            console.log("🎯 Event listener ADDED to search button!");
+            console.log(" Event listener ADDED to search button!");
         }
     }
 
-    // 🔹 Fetch Jobs and Display Results in search.html
+    //  Search Functionality in `search.html`
     if (currentPage === "search.html") {
-        console.log("🔄 Pre-filling search form & Fetching jobs...");
+        console.log(" Pre-filling search form & Fetching jobs...");
 
         const urlParams = new URLSearchParams(window.location.search);
         const getParamValue = (param) => urlParams.get(param) || "";
@@ -83,11 +83,32 @@ document.addEventListener("DOMContentLoaded", function () {
         if (jobTitle) {
             fetchJobs(jobTitle, location);
         }
+
+        // 🔹 Fix: Ensure Search Button in `search.html` Works
+        const searchBtn = document.getElementById("search-btn");
+        if (searchBtn) {
+            searchBtn.addEventListener("click", function (event) {
+                event.preventDefault();
+                console.log("✅ Search button in search.html clicked!");
+
+                const jobTitle = document.getElementById("search-input").value.trim();
+                const location = document.getElementById("location").value || "us";
+
+                if (!jobTitle) {
+                    console.warn(" No Job Title Entered!");
+                    return;
+                }
+
+                fetchJobs(jobTitle, location);
+            });
+
+            console.log(" Search button event listener added in search.html!");
+        }
     }
 
-    // 🔹 Fetch Jobs from API
+    //  Fetch Jobs from API
     async function fetchJobs(jobTitle, location) {
-        const apiKey = "c8f22d05e0msh10f113bb5ea3548p132972jsnd857298fef44"; // 🔴  API key
+        const apiKey = "c8f22d05e0msh10f113bb5ea3548p132972jsnd857298fef44"; //API key
 
         const url = `https://jsearch.p.rapidapi.com/search?query=${encodeURIComponent(jobTitle)}&page=1&num_pages=1&country=${location}`;
 
@@ -110,16 +131,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 displayJobs(data.data);
                 saveJobsToLocalStorage(data.data);
             } else {
-                document.querySelector(".jobs-container").innerHTML = "<p>No jobs found. Try another search.</p>";
+                document.querySelector(".job-results").innerHTML = "<p>No jobs found. Try another search.</p>";
             }
         } catch (error) {
             console.error("🚨 Error fetching jobs:", error);
         }
     }
 
-    // 🔹 Display Jobs in search.html
+    //  Display Jobs in `search.html`
     function displayJobs(jobs) {
-        const jobsContainer = document.querySelector(".jobs-container");
+        const jobsContainer = document.querySelector(".job-results");
         jobsContainer.innerHTML = "";
 
         jobs.forEach(job => {
@@ -136,32 +157,48 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 🔹 Save Jobs to LocalStorage (for your-jobs.html)
+    //  Save Jobs to LocalStorage (Fix: Appends Instead of Overwriting)
     function saveJobsToLocalStorage(jobs) {
-        localStorage.setItem("savedJobs", JSON.stringify(jobs));
+        let savedJobs = JSON.parse(localStorage.getItem("savedJobs")) || [];
+        savedJobs = [...savedJobs, ...jobs]; // Append new jobs
+        localStorage.setItem("savedJobs", JSON.stringify(savedJobs));
     }
 
-    // 🔹 Load Saved Jobs in your-jobs.html
+    //  Load Saved Jobs in `your-jobs.html`
     if (currentPage === "your-jobs.html") {
-        console.log("📂 Loading saved jobs...");
-        const savedJobs = JSON.parse(localStorage.getItem("savedJobs")) || [];
+        console.log("📂 Loading saved jobs in your-jobs.html...");
+        displaySavedJobs();
+    }
+
+    //  Display Saved Jobs
+    function displaySavedJobs() {
         const savedJobsContainer = document.getElementById("saved-jobs");
+        
+        if (!savedJobsContainer) {
+            console.error(" ERROR: Saved jobs container NOT found in your-jobs.html!");
+            return;
+        }
+
+        savedJobsContainer.innerHTML = ""; // Clear old content
+
+        let savedJobs = JSON.parse(localStorage.getItem("savedJobs")) || [];
 
         if (savedJobs.length === 0) {
             savedJobsContainer.innerHTML = "<p>No saved jobs found.</p>";
-        } else {
-            savedJobs.forEach(job => {
-                const jobElement = document.createElement("div");
-                jobElement.classList.add("job-card");
-                jobElement.innerHTML = `
-                    <h3>${job.job_title}</h3>
-                    <p><strong>Company:</strong> ${job.employer_name || "Not provided"}</p>
-                    <p><strong>Location:</strong> ${job.job_city || "Not specified"}</p>
-                    <p><strong>Salary:</strong> ${job.salary_info || "Not listed"}</p>
-                    <a href="${job.job_apply_link}" target="_blank">Apply Now</a>
-                `;
-                savedJobsContainer.appendChild(jobElement);
-            });
+            return;
         }
+
+        savedJobs.forEach((job, index) => {
+            const jobElement = document.createElement("div");
+            jobElement.classList.add("job-card");
+            jobElement.innerHTML = `
+                <h3>${job.job_title}</h3>
+                <p><strong>Company:</strong> ${job.employer_name || "Not provided"}</p>
+                <p><strong>Location:</strong> ${job.job_city || "Not specified"}</p>
+                <p><strong>Salary:</strong> ${job.salary_info || "Not listed"}</p>
+                <a href="${job.job_apply_link}" target="_blank">Apply Now</a>
+            `;
+            savedJobsContainer.appendChild(jobElement);
+        });
     }
 });
