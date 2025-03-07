@@ -1,54 +1,71 @@
-# Job Board App
+# 🏆 Job Board App  
 
-## Overview
-The Job Board App is a modern and dynamic web application that fetches and displays job listings using a third-party API. The app provides an intuitive interface for users to search, filter, and view job opportunities seamlessly.
+## 📌 Overview  
+The **Job Board App** is a modern and dynamic web application that fetches and displays job listings using the **JSearch API** via **RapidAPI**. Users can search, filter, and save job opportunities with ease, making job hunting more efficient.  
 
-## Features
-- **Search Bar**: Allows users to search for jobs by keywords.
-- **Filter Options**: Users can filter jobs by location, category, and salary range.
-- **Job Listings**: A grid-based display of job postings showing company logo, job title, location, salary, and an 'Apply Now' button.
-- **Job Details Modal**: Clicking on a job opens a modal with full job details.
-- **Responsive Design**: Fully functional on mobile, tablet, and desktop screens.
-
-## Future Enhancements
-- **Dark Mode Toggle**: Implement a dark theme for better accessibility.
-- **User Authentication**: Allow users to save job listings and track applications.
-- **Bookmark Feature**: Users can bookmark jobs for later.
-- **Pagination & Lazy Loading**: Improve performance for large datasets.
-
-## Technologies Used
-- **HTML5**: Structure and layout of the application.
-- **CSS3**: Styling and animations for a modern UI.
-- **JavaScript (Vanilla JS)**: Handles dynamic content, API calls, and user interactions.
-- **Third-Party API**: Fetches live job listings.
-
-## Technology Breakdown
-- **CSS Grid & Flexbox**: Used for layout and responsive design.
-- **Media Queries**: Ensures adaptability across different screen sizes.
-- **Fetch API**: Retrieves job data dynamically.
-- **Event Listeners**: Enhances interactivity (search, filters, modals).
-- **Local Storage (Future Enhancement)**: Save user preferences and bookmarks.
-
-## Setup Instructions
-1. Clone this repository:
-   ```sh
-   git clone https://github.com/roddazad/job-board-app.git
-   ```
-2. Navigate to the project folder:
-   ```sh
-   cd job-board-app
-   ```
-3. Open `index.html` in your browser.
-
-## Live Demo
-[Live Demo Link](#) *(Add the deployed link once available)*
-
-## Contributing
-Contributions are welcome! Feel free to submit a pull request.
-
-## License
-This project is licensed under the MIT License.
+🔗 **Live Demo:** [JobBoard Live](https://roddazad.github.io/job-board-app/)  
+🔗 **GitHub Repository:** [JobBoard Repo](https://github.com/roddazad/job-board-app)
 
 ---
-🚀 Built with passion for web development!
 
+## ✨ Features  
+✅ **Real-time Job Listings** – Fetches jobs dynamically from the JSearch API  
+✅ **Advanced Search & Filtering** – Search by title, location, industry, experience, job type, salary, and more  
+✅ **Saved Jobs Section** – Users can save jobs to view later  
+✅ **Sorting & Filtering** – Sort saved jobs by title, salary, or location  
+✅ **Mobile-Responsive** – Fully functional on desktop, tablet, and mobile  
+✅ **Modern UI & Navigation** – Clean, dynamic, and user-friendly  
+
+---
+
+## 🚀 Future Enhancements  
+🔹 **Dark Mode Toggle** – Improved accessibility and user experience  
+🔹 **User Authentication** – Save job searches across devices  
+🔹 **Bookmark Feature** – Allow users to bookmark jobs without searching again  
+🔹 **Pagination & Lazy Loading** – Optimize performance for large datasets  
+
+---
+
+## 🎨 Technologies Used  
+- **Frontend:** HTML5, CSS3, JavaScript  
+- **API Integration:** JSearch API via RapidAPI  
+- **LocalStorage:** Save and retrieve user job searches  
+
+---
+
+## 🏗️ Project Structure  
+
+job-board-app/
+│── index.html          # Homepage with job search
+│── search.html         # Search results & job filtering
+│── your-jobs.html      # Saved jobs list
+│── about.html          # About page
+│── contact.html        # Contact page
+│── styles.css          # Global styles
+│── script.js           # JavaScript logic & API handling
+│── README.md           # Project documentation
+│── assets/             # Images & other assets
+
+---
+
+## 🔧 Setup & Installation  
+### 1️⃣ Clone the repository  
+```sh
+git clone https://github.com/roddazad/job-board-app.git
+
+2️⃣ Navigate to the project folder
+
+cd job-board-app
+
+3️⃣ Open the project in a browser
+	•	Open index.html in your browser
+	•	OR use Live Server in VS Code for better experience
+
+   📬 Contact
+
+💼 Creator: Rodd Azad
+🔗 GitHub: roddazad
+🔗 Live Demo: JobBoard Live
+📧 Email: roddazad@gmail.com
+
+🚀 Find your dream job faster with JobBoard – the smart way to search! 🎯
