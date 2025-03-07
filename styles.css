@@ -229,11 +229,13 @@ nav {
 }
 
 .testimonial {
-    background-color: #02151f;
-    padding: 20px;
+    text-align: center;
+    background: #02151f;
+    padding: 15px;
     border-radius: 10px;
-    max-width: 300px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    width: 200px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+    
 }
 
 .testimonial p {
@@ -387,26 +389,94 @@ footer {
 }
 
 /* About Page ______________________________________________________*/
+
 .about {
     text-align: center;
     padding: 60px 20px;
     margin-top: 60px;
 }
 
-.about h1 {
-    font-size: 2.5rem;
+.about h1, .about h2 {
+    color: #ffcc00;
 }
 
-.about ul {
+.about-list {
     list-style-type: none;
     padding: 0;
 }
 
-.about ul li {
+.about-list li {
     padding: 10px;
     font-size: 1.2rem;
 }
 
+/* Fun Facts Section */
+.fun-facts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.fact {
+    background-color: #042435;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    color: white;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Team Section */
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.team-member {
+    text-align: center;
+    background: #02151f;
+    padding: 15px;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: solid 3px #ffcc00;
+}
+
+.team-member h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2rem;
+}
+
+/* Call to Action */
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #ffcc00;
+    color: #042435;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #e6b800;
+}
 /* Contact Page ______________________________________________________*/
 .contact {
     text-align: center;
