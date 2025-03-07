@@ -1,4 +1,4 @@
-/* General Styles */
+/* General Styles ______________________________________________________*/
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,7 +8,7 @@ body {
     color: white
 }
 
-/* Navigation Bar */
+/* Navigation Bar ______________________________________________________*/
 nav {
     position: fixed;
     top: 0;
@@ -51,7 +51,7 @@ nav {
     color: #ffcc00;
 }
 
-/* Hero Section */
+/* Hero Section ______________________________________________________*/
 .hero {
     text-align: center;
     margin-top: 30px;
@@ -100,7 +100,7 @@ nav {
     background-color: #e6b800;
 }
 
-/* Search and Filters */
+/* Search and Filters______________________________________________________ */
 .filters {
     display: flex;
     justify-content: center;
@@ -115,7 +115,7 @@ nav {
     font-size: 1rem;
 }
 
-/* Job Listings */
+/* Job Listings ______________________________________________________*/
 .job-listings {
     padding: 40px 20px;
     text-align: center;
@@ -127,7 +127,7 @@ nav {
     gap: 20px;
 }
 
-/* Testimonials Section */
+/* Testimonials Section ______________________________________________________*/
 .testimonials {
     text-align: center;
     padding: 50px 20px;
@@ -170,7 +170,7 @@ nav {
     font-weight: bold;
 }
 
-/* Footer */
+/* Footer ______________________________________________________*/
 footer {
     background-color: #042435;
     color: white;
@@ -196,4 +196,144 @@ footer {
 
 .footer-links a:hover {
     text-decoration: underline;
+}
+
+/* Search for Job Page ______________________________________________________*/
+.search-section {
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 60px;
+}
+
+.search-section h1 {
+    font-size: 2.5rem;
+}
+
+.input-container {
+    margin-top: 20px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+}
+
+.filters select,
+.filters input {
+    width: 180px; /* Matches select dropdowns */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#search-input {
+    width: 180px; /* Matches select dropdowns */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.page-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #042435;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.page-link:hover {
+    background-color: #e6b800;
+}
+
+/* Your Jobs Page ______________________________________________________*/
+.your-jobs {
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 60px;
+}
+
+.your-jobs h1 {
+    font-size: 2.5rem;
+}
+
+.jobs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* About Page ______________________________________________________*/
+.about {
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 60px;
+}
+
+.about h1 {
+    font-size: 2.5rem;
+}
+
+.about ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about ul li {
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+/* Contact Page ______________________________________________________*/
+.contact {
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 60px;
+}
+
+.contact h1 {
+    font-size: 2.5rem;
+}
+
+.contact form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact input, .contact textarea {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+}
+
+.contact button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #042435;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact button:hover {
+    background-color: #e6b800;
+}
+
+.contact-link {
+    color: #e6b800;
 }

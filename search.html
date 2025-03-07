@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search for Job</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo"><a href="index.html" class="logo-link">JobBoard</a></div>
+        <ul class="nav-links">
+            <li><a href="search.html">Search for Job</a></li>
+            <li><a href="your-jobs.html">Your Jobs</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Job Search Form -->
+    <section class="search-section">
+        <h1>Find Your Perfect Job</h1>
+        <div class="input-container">
+            <input type="text" id="search-input" placeholder="Job title or keyword...">
+            
+            <div class="filters">
+                <select id="location">
+                    <option value="">Location</option>
+                    <option value="remote">Remote</option>
+                    <option value="new-york">New York, NY</option>
+                    <option value="los-angeles">Los Angeles, CA</option>
+                    <option value="chicago">Chicago, IL</option>
+                    <option value="houston">Houston, TX</option>
+                    <option value="phoenix">Phoenix, AZ</option>
+                    <option value="philadelphia">Philadelphia, PA</option>
+                    <option value="san-antonio">San Antonio, TX</option>
+                    <option value="san-diego">San Diego, CA</option>
+                    <option value="dallas">Dallas, TX</option>
+                    <option value="san-jose">San Jose, CA</option>
+                    <option value="seattle">Seattle, WA</option>
+                    <option value="boston">Boston, MA</option>
+                    <option value="denver">Denver, CO</option>
+                    <option value="atlanta">Atlanta, GA</option>
+                    <option value="miami">Miami, FL</option>
+                    <option value="las-vegas">Las Vegas, NV</option>
+                    <option value="portland">Portland, OR</option>
+                    <option value="austin">Austin, TX</option>
+                    <option value="washington-dc">Washington, D.C.</option>
+                </select>
+                
+                <select id="industry">
+                    <option value="">Industry</option>
+                    <option value="technology">Technology</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="finance">Finance</option>
+                    <option value="education">Education</option>
+                    <option value="engineering">Engineering</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="sales">Sales</option>
+                    <option value="customer-service">Customer Service</option>
+                    <option value="manufacturing">Manufacturing</option>
+                    <option value="logistics">Logistics</option>
+                    <option value="hospitality">Hospitality</option>
+                    <option value="retail">Retail</option>
+                    <option value="government">Government</option>
+                    <option value="legal">Legal</option>
+                    <option value="science">Science</option>
+                    <option value="real-estate">Real Estate</option>
+                    <option value="nonprofit">Nonprofit</option>
+                    <option value="arts">Arts & Entertainment</option>
+                </select>
+                <select id="experience">
+                    <option value="">Experience Level</option>
+                    <option value="entry">Entry Level</option>
+                    <option value="mid">Mid Level</option>
+                    <option value="senior">Senior Level</option>
+                </select>
+                <select id="job-type">
+                    <option value="">Job Type</option>
+                    <option value="full-time">Full-time</option>
+                    <option value="part-time">Part-time</option>
+                    <option value="contract">Contract</option>
+                    <option value="internship">Internship</option>
+                    <option value="remote">Remote</option>
+                </select>
+                <select id="remote-onsite">
+                    <option value="">Work Preference</option>
+                    <option value="remote">Remote</option>
+                    <option value="onsite">On-Site</option>
+                    <option value="hybrid">Hybrid</option>
+                </select>
+                <select id="date-posted">
+                    <option value="">Date Posted</option>
+                    <option value="24h">Last 24 hours</option>
+                    <option value="7d">Last 7 days</option>
+                    <option value="30d">Last 30 days</option>
+                </select>
+                <input type="number" id="min-salary" placeholder="Minimum Salary ($)">
+                <input type="text" id="company-name" placeholder="Company (Optional)">
+                <input type="text" id="skills" placeholder="Skills (Optional)">
+            </div>
+            <button id="search-btn">Search</button>
+        </div>
+        <a href="your-jobs.html" class="page-link">View Your Jobs</a>
+    </section>
+    <!-- Job Listings Section -->
+    <section class="job-results">
+        <h2>Search Results</h2>
+        <div class="jobs-container">
+            <!-- Job results will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="slogan">"Connecting Talent with Opportunity"</p>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </div>
+        <p>&copy; 2025 JobBoard. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
