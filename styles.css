@@ -51,6 +51,40 @@ nav {
     color: #ffcc00;
 }
 
+/* Mobile Navbar Styles */
+.menu-button {
+    display: none; /* Hidden by default on large screens */
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+/* Show Menu Button on Small Screens */
+@media screen and (max-width: 768px) {
+    .menu-button {
+        display: block; /* Show the menu button */
+    }
+
+    .nav-links {
+        display: none; /* Hide menu initially */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #042435;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show menu when active */
+    }
+}
+
 /* Hero Section ______________________________________________________*/
 .hero {
     text-align: center;

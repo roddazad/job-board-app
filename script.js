@@ -1,6 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("✅ JavaScript Loaded!");
 
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", function () {
+            console.log("🔄 Toggling Mobile Menu");
+            navLinks.classList.toggle("active");
+        });
+    }
+
     const currentPage = window.location.pathname.split("/").pop();
     console.log("📄 Current Page:", currentPage);
 
